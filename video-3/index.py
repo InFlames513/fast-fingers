@@ -8,34 +8,32 @@ time.sleep(1)
 
 file = open("C:\\Users\\ismet\\OneDrive\\Belgeler\\fast write\\kelime.txt", "r", encoding="utf-8").readlines()
 
-ret = True
-while ret:
+while True:
     status = input("Kolay/Orta/Zor: ").lower() # Kolay => kolay
     number = input("Kaç kelimelik bir oyun istiyorsun: ")
 
     arr = []
     for x in range(int(number)):
-        y = True
-        while y:
+        while True:
             word = random.choice(file).rstrip("\n")
             if status == "kolay" and len(word) < 11:
                 arr.append(word)
-                y = False
+                break
             elif status == "orta" and len(word) < 18:
                 arr.append(word)
-                y = False
+                break
             elif status == "zor" and len(word) > 9:
                 arr.append(word)
-                y = False
+                break
             elif status != "kolay" and status != "orta" and status != "zor":
                 arr.append(word)
-                y = False
+                break
         
 
     print("Oyun 3 saniye sonra başlıyor...", end=" ")
-    for x in range(3):
+    for x in range(3,0,-1):
         sys.stdout.flush()
-        print(f"\rOyun {3-x} saniye sonra başlıyor...", end=" ")
+        print(f"\rOyun {x} saniye sonra başlıyor...", end=" ")
         time.sleep(1)
     print("")
 
@@ -81,4 +79,4 @@ while ret:
     if reply.lower() == "evet":
         pass
     else:
-        ret = False
+        break
