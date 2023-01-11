@@ -2,11 +2,16 @@ from numpy import random
 import time
 import json
 import sys
+import os
 
 print("Oyun Hazırlanıyor...")
 time.sleep(1)
 
-file = open("C:\\Users\\ismet\\OneDrive\\Belgeler\\fast write\\kelime.txt", "r", encoding="utf-8").readlines()
+doc_dir = os.path.expanduser('~/Documents')
+BASE_DIR = os.path.join(doc_dir,'fast write')
+
+
+file = open(os.path.join(BASE_DIR,'kelime.txt'), "r", encoding="utf-8").readlines()
 
 while True:
     status = input("Kolay/Orta/Zor: ").lower() # Kolay => kolay
@@ -61,10 +66,11 @@ while True:
         "time_ort": keys/finish
     }
 
-    data_file = json.load(open("C:\\Users\\ismet\\OneDrive\\Belgeler\\fast write\\data.json", "r", encoding="utf-8"))
+
+    data_file = json.load(open(os.path.join(BASE_DIR,'data.json'), "r", encoding="utf-8"))
     data_file[f"{time.time()}"] = data
 
-    with open("C:\\Users\\ismet\\OneDrive\\Belgeler\\fast write\\data.json", "w") as json_file:
+    with open(os.path.join(BASE_DIR,'data.json'), "w") as json_file:
         json.dump(data_file, json_file)
 
     print("\nOyun Bitti!\n")
