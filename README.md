@@ -1,5 +1,5 @@
 # Bilgilendirme
-Bu proje InFlames#2005'e ait olup paylaşılması yasaktır tektif etmeyiniz.<br>
+Bu proje InFlames513'e ait olup paylaşılması yasaktır tektif etmeyiniz.<br>
 Proje videosu [Youtube Kanalımda](https://youtu.be/-NsSZXIno8E) mevcuttur.<br>
 Herhangi bir sorunda discord üzerinden iletişime geçebilirsiniz.<br>
 
